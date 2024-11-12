@@ -51,11 +51,16 @@ g++ -std=c++20 -x c++-header /usr/include/aarch64-linux-gnu/c++/13/bits/stdc++.h
 ```bash
 #!/bin/bash
 WIN_IP=$(grep -m 1 -oP '10\.\d+\.\d+\.\d+' <<< "$(ipconfig.exe)" | tr -d '\r')
-export http_proxy="http://$WIN_IP:8080"
-export https_proxy="http://$WIN_IP:8080"
-export ftp_proxy="http://$WIN_IP:8080"
+export http_proxy="http://$WIN_IP:8890"
+export https_proxy="http://$WIN_IP:8890"
+export ftp_proxy="http://$WIN_IP:8890"
 export no_proxy="localhost,127.0.0.1"
 source ~/.bashrc
+
+git config --global http.proxy http://$WIN_IP:8890
+git config --global https.proxy http://$WIN_IP:8890
+
+echo "set proxy to $WIN_IP"
 ```
 
 想让这个脚本自行启动，可以试试这个命令：（我没试过）

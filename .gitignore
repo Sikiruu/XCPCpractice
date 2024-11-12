@@ -1,2 +1,8 @@
 .pch/stdc++.gch
 .vscode/
+*.exe
+*.o
+*.out
+*.gch
+/[A-Z]
+**/[A-Z]
