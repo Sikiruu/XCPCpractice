@@ -37,3 +37,29 @@ g++ -std=c++20 -x c++-header /usr/include/aarch64-linux-gnu/c++/13/bits/stdc++.h
 ```
 
 以上是错误的，未完待续，暂时不折腾了……
+
+## WSL on Win Arm 使用笔记
+
+### 安装
+
+[_Get started with Windows Subsystem for Linux (WSL) on Arm_](https://learn.arm.com/learning-paths/laptops-and-desktops/wsl2/)
+
+### 代理
+
+可以编辑脚本，放在 `~/set_proxy.sh`，并使用 `source ~/set_proxy.sh` 启动。
+
+```bash
+#!/bin/bash
+WIN_IP=$(grep -m 1 -oP '10\.\d+\.\d+\.\d+' <<< "$(ipconfig.exe)" | tr -d '\r')
+export http_proxy="http://$WIN_IP:8080"
+export https_proxy="http://$WIN_IP:8080"
+export ftp_proxy="http://$WIN_IP:8080"
+export no_proxy="localhost,127.0.0.1"
+source ~/.bashrc
+```
+
+想让这个脚本自行启动，可以试试这个命令：（我没试过）
+
+```bash
+echo "source ~/set_proxy.sh" >> ~/.bashrc
+```
