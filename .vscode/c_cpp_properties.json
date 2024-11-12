@@ -4,8 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "//usr/local/include",
+                "//usr/include/c++/13",
+                "//usr/include/aarch64-linux-gnu/c++/13",
+                "//usr/include/c++/13/backward",
+                "//usr/lib/gcc/aarch64-linux-gnu/13/include",
+                "/usr/local/include",
+                "//usr/include/aarch64-linux-gnu",
                 "//usr/include"
+
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
