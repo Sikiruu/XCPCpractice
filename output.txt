@@ -1,8 +1,4 @@
-YES
-YES
-YES
-NO
-YES
-NO
-YES
-YES
+28
+15
+12
+1000
