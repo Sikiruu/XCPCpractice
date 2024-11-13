@@ -1,14 +1,25 @@
-4
+8
+5 5
+sofia
+afios
+3 2
+cba
+bc
+5 1
+sofia
+e
+15 7
+anavolimilovana
+aamanan
+26 4
+abcdefghijklmnopqrstuvwxyz
+nope
+26 4
+zyxwvutsrqponmlkjihgfedcba
+nope
+7 3
+apricot
+cat
 3 3
-2 6
-2 7
-1 15
-1 3
-2 6
-2 7
-1 15
-6 2
-1 7
-2 5
-190000 1
-1 1000
+cba
+acb
