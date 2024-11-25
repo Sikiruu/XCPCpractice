@@ -141,3 +141,33 @@ s.pop();
 ```cpp
 priority_queue<int, vector<int>, greater<int> > //top()取出来的就是最大的
 ```
+
+## bitmap
+
+```cpp
+bitset<8> b1;  // 8 位，初始值为 00000000
+bitset<8> b2(5);  // 00000101
+bitset<8> b3("1101");  // 00001101
+
+b1.set(2);  // 第 2 位设为 1，结果是 00000100
+b1.set();  // 全部设为 1，结果是 11111111
+
+b1.reset(2);  // 第 2 位设为 0
+b1.reset();  // 全部清 0
+
+b1.flip(2);  // 第 2 位翻转
+b1.flip();  // 全部翻转
+
+b1.count();  // 有多少个 1
+b1.test(2); // 第 2 位是否是 1
+
+bitset<8> a("1100");
+bitset<8> b("1010");
+bitset<8> c = a & b;  // 1000
+bitset<8> d = a | b;  // 1110
+bitset<8> e = a ^ b;  // 0110
+bitset<8> f = ~a;     // 0011
+bitset<8> g = a << 2; // 00001100
+
+b1[2] = 1;  // 设置第 2 位
+```

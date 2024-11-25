@@ -1,3 +1,13 @@
+YES
 2
+j 2
+q 3
+YES
 2
-5
+k 2
+j 4
+YES
+2
+k 2
+q 3
+NO
