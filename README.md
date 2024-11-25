@@ -46,25 +46,19 @@ g++ -std=c++20 -x c++-header /usr/include/aarch64-linux-gnu/c++/13/bits/stdc++.h
 
 ### 代理
 
-可以编辑脚本，放在 `~/set_proxy.sh`，并使用 `source ~/set_proxy.sh` 启动。
+并不用编辑代理脚本，参照：https://blog.csdn.net/iftodayhappy/article/details/137236279、
 
-```bash
-#!/bin/bash
-WIN_IP=$(grep -m 1 -oP '10\.\d+\.\d+\.\d+' <<< "$(ipconfig.exe)" | tr -d '\r')
-export http_proxy="http://$WIN_IP:8890"
-export https_proxy="http://$WIN_IP:8890"
-export ftp_proxy="http://$WIN_IP:8890"
-export no_proxy="localhost,127.0.0.1"
-source ~/.bashrc
+在 Windows 主机上编辑 `~\.wslconfig`：
 
-git config --global http.proxy http://$WIN_IP:8890
-git config --global https.proxy http://$WIN_IP:8890
-
-echo "set proxy to $WIN_IP"
-```
-
-想让这个脚本自行启动，可以试试这个命令：（我没试过）
-
-```bash
-echo "source ~/set_proxy.sh" >> ~/.bashrc
+```cpp
+[wsl2]
+memory=12GB
+processors=8
+[experimental]
+autoMemoryReclaim=gradual
+networkingMode=mirrored
+dnsTunneling=true
+firewall=true
+autoProxy=true
+sparseVhd=true
 ```
