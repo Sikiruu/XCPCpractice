@@ -17,9 +17,29 @@ void easy() {
 }
 
 void hard() {
-    ll x, m;
-    cin >> x >> m;
-    
+    int x; ll m; cin >> x >> m;
+
+    // divisible by x
+    ll p = m - m % x;
+    ll ans = p / x - (x < p);
+    if ((x ^ p) >= 1 and (x ^ p) <= m) ++ans;
+    p += x;
+    if ((x ^ p) >= 1 and (x ^ p) <= m) ++ans;
+
+    // divisibly by y
+    for (int y = 1; y <= min(1LL * x, m); y++) {
+        ll cur = x ^ y;
+        if (cur % y == 0) {
+            ++ans;
+        }
+    }
+
+    // divisible by both
+    if (x <= m) {
+        --ans;
+    }
+
+    cout << ans << "\n";
 }
 
 int main() {
